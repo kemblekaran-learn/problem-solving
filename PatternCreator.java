@@ -13,7 +13,9 @@ public class PatternCreator {
 
         // printInvertedPyramid(5);
 
-        printPyramidPattern(5);
+        // printPyramidPattern(5);
+
+        printDiamondPattern(5);
     }
 
     /**
@@ -167,6 +169,33 @@ public class PatternCreator {
 
             System.out.println();
         }
+    }
+
+    private static void printInvertedPyramidPattern(int n) {
+
+        for (int i = n; i >= 1; i--) {
+
+            for (int j = 1; j <= (n - i) + 1; j++) {
+                System.out.print(" ");
+            }
+
+            for (int k = 1; k <= (2 * i) - 1; k++) {
+                System.out.print("*");
+            }
+
+            System.out.println();
+        }
+    }
+
+    /**
+     * Prints a diamond pattern of asterisks (*) for the given size.
+     * The pattern consists of a pyramid followed by an inverted pyramid.
+     *
+     * @param n the number of rows for the top pyramid pattern
+     */
+    private static void printDiamondPattern(int n) {
+        printPyramidPattern(n);
+        printInvertedPyramidPattern(n - 1);
     }
 
     /**
